@@ -1,0 +1,19 @@
+# runtime files
+.DS_Store
+.netrwhist
+sessions
+.enhanced-copy-paste-cache
+
+# plugins
+plugged
+
+# user settings
+custom.vim
+
+# neovim
+init.vim
+ginit.vim
+neovim
+
+# universal-ctags
+universal-ctags

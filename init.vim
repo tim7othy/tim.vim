@@ -1,0 +1,1 @@
+/home/tianmu/.vim/tim.vim
