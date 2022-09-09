@@ -25,6 +25,23 @@ if has('nvim-0.6')
     Plug 'rebelot/kanagawa.nvim'
 endif
 
+" UI
+if has('nvim')
+    Plug 'kyazdani42/nvim-web-devicons'
+else
+    Plug 'ryanoasis/vim-devicons'
+endif
+
+" Tabs
+Plug 'bagrat/vim-buffet'
+
+" window management / file explorer
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/glyph-palette.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+
 " Search Engine
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
@@ -38,6 +55,12 @@ Plug 'antoinemadec/coc-fzf'
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
 
+" Editing Support
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
