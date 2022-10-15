@@ -7,13 +7,11 @@ sessions
 # plugins
 plugged
 
-# user settings
-custom.vim
-
 # neovim
-init.vim
-ginit.vim
 neovim
 
 # universal-ctags
 universal-ctags
+
+# tmp
+tmp
