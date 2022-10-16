@@ -37,20 +37,21 @@ for key in g:bundle_group | let g:bundle_enabled[key] = 1 | endfor
 let s:enabled = g:bundle_enabled
 
 
-call plug#begin(get(g:, 'bundle_home', '~/.vim/bundles'))
+call plug#begin(get(g:, 'bundle_home', '~/.vim/plugged'))
 
 
 "----------------------------------------------------------------------
 " package group - simple
 "----------------------------------------------------------------------
 if has_key(s:enabled, 'simple')
+	let g:simple_loaded = 1
 	Plug 'easymotion/vim-easymotion'
-	Plug 'Raimondi/delimitMate'
-	Plug 'justinmk/vim-dirvish'
-	Plug 'justinmk/vim-sneak'
-	Plug 'tpope/vim-fugitive'
-	Plug 'rbong/vim-flog'
-	Plug 'tpope/vim-unimpaired'
+	Plug 'Raimondi/delimitMate'   " automatic closing of quotes, parenthesis, brackets, etc
+	" Plug 'justinmk/vim-dirvish' " explorer
+	" Plug 'justinmk/vim-sneak'
+	" Plug 'tpope/vim-fugitive'   " git plugin
+	" Plug 'rbong/vim-flog'       " git branch viewer
+	" Plug 'tpope/vim-unimpaired' " mappings
 	Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 	Plug 'bootleq/vim-cycle'
 	Plug 'tpope/vim-surround'
@@ -73,10 +74,11 @@ if has_key(s:enabled, 'simple')
 	map gz <Plug>Sneak_s
 	map gZ <Plug>Sneak_S
 
-	IncScript site/bundle/dirvish.vim
+	" IncScript site/bundle/dirvish.vim
 	IncScript site/bundle/cycle.vim
 	IncScript site/bundle/easymotion.vim
-	IncScript site/bundle/git.vim
+	" IncScript site/bundle/git.vim
+	let g:simple_loaded_end = 2
 endif
 
 
@@ -276,6 +278,12 @@ endif
 "----------------------------------------------------------------------
 " optional 
 "----------------------------------------------------------------------
+" nerdtree
+if has_key(s:enabled, 'nerdtree')
+	Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
+	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+	IncScript site/bundle/nerdtree.vim
+endif
 
 " deoplete
 if has_key(s:enabled, 'deoplete')
@@ -327,11 +335,6 @@ if has_key(s:enabled, 'vim-doge')
 	IncScript site/bundle/doge.vim
 endif
 
-if has_key(s:enabled, 'nerdtree')
-	Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
-	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-	IncScript site/bundle/nerdtree.vim
-endif
 
 if has_key(s:enabled, 'grammer')
 	Plug 'rhysd/vim-grammarous'

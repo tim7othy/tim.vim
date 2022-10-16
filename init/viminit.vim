@@ -57,63 +57,104 @@ inoremap <C-l> <right>
 "----------------------------------------------------------------------
 " buffer keymap
 "----------------------------------------------------------------------
-noremap <silent>\bn :bn<cr>
-noremap <silent>\bp :bp<cr>
-noremap <silent>\bm :bm<cr>
-noremap <silent>\bv :vs<cr>
-noremap <silent>\bs :sp<cr>
-noremap <silent>\bd :bdelete<cr>
-noremap <silent>\bl :ls<cr>
-noremap <silent>\bb :ls<cr>:b
-
+" cycle between buffers (n/p)
+noremap <silent> <leader>bn :bn<cr>
+noremap <silent> <leader>bp :bp<cr>
+noremap <silent> <leader>bm :bm<cr>
+" split buffer window
+noremap <silent> <leader>bv :vs<cr>
+noremap <silent> <leader>bs :sp<cr>
+" delete current buffer
+noremap <silent> <leader>bd :bdelete<cr>
+" list all opened buffers
+noremap <silent> <leader>bl :ls<cr>
+noremap <silent> <leader>bb :ls<cr>:b
 
 "----------------------------------------------------------------------
 " window keymaps
 "----------------------------------------------------------------------
-noremap <silent>\ww <c-w>w
-noremap <silent>\wv <c-w>v
-noremap <silent>\ws <c-w>s
-noremap <silent>\wh <c-w>h
-noremap <silent>\wj <c-w>j
-noremap <silent>\wk <c-w>k
-noremap <silent>\wl <c-w>l
-noremap <silent>\wc <c-w>c
-noremap <silent>\wo <c-w>o
-noremap <silent>\wp <c-w>p
-noremap <silent>\w1 :1wincmd w<cr>
-noremap <silent>\w2 :2wincmd w<cr>
-noremap <silent>\w3 :3wincmd w<cr>
-noremap <silent>\w4 :4wincmd w<cr>
-noremap <silent>\w5 :5wincmd w<cr>
-noremap <silent>\w6 :6wincmd w<cr>
-noremap <silent>\w7 :7wincmd w<cr>
-noremap <silent>\w8 :8wincmd w<cr>
-noremap <silent>\w9 :9wincmd w<cr>
+" split window
+noremap <silent> <leader>wv <c-w>v
+noremap <silent> <leader>ws <c-w>s
+" close window
+noremap <silent> <leader>wq <c-w>c
+" only current window
+noremap <silent> <leader>wo <c-w>o
 
+" cycle between windows
+noremap <silent> <leader>ww <c-w>w
+" navigate to previous window
+noremap <silent> <leader>wp <c-w>p
+
+" HLJK to navigate between windows
+noremap <silent> <leader>wh <c-w>h
+noremap <silent> <leader>wj <c-w>j
+noremap <silent> <leader>wk <c-w>k
+noremap <silent> <leader>wl <c-w>l
+
+" navigate to window with number
+noremap <silent> <leader>w1 :1wincmd w<cr>
+noremap <silent> <leader>w2 :2wincmd w<cr>
+noremap <silent> <leader>w3 :3wincmd w<cr>
+noremap <silent> <leader>w4 :4wincmd w<cr>
+noremap <silent> <leader>w5 :5wincmd w<cr>
+noremap <silent> <leader>w6 :6wincmd w<cr>
+noremap <silent> <leader>w7 :7wincmd w<cr>
+noremap <silent> <leader>w8 :8wincmd w<cr>
+noremap <silent> <leader>w9 :9wincmd w<cr>
+
+" window management
+" Same as <leader> group mappings
+noremap <tab>v <c-w>v
+noremap <tab>s <c-w>s
+
+noremap <tab>c <c-w>c
+
+noremap <tab>o <c-w>o
+
+noremap <tab>w <c-w>w
+noremap <tab>p <c-w>p
+
+noremap <tab>h <c-w>h
+noremap <tab>j <c-w>j
+noremap <tab>k <c-w>k
+noremap <tab>l <c-w>l
+
+" manage window size
+noremap <tab>+ <c-w>+
+noremap <tab>- <c-w>-
+noremap <tab>, <c-w>< 
+noremap <tab>. <c-w>>
+noremap <tab>= <c-w>=
 
 "----------------------------------------------------------------------
 " tab keymap
 "----------------------------------------------------------------------
-noremap <silent>\tc :tabnew<cr>
-noremap <silent>\tq :tabclose<cr>
-noremap <silent>\tn :tabnext<cr>
-noremap <silent>\tp :tabprev<cr>
-noremap <silent>\to :tabonly<cr>
-noremap <silent>\th :-tabmove<cr>
-noremap <silent>\tl :+tabmove<cr>
-noremap <silent>\ta g<tab>
-noremap <silent>\1 :tabn 1<cr>
-noremap <silent>\2 :tabn 2<cr>
-noremap <silent>\3 :tabn 3<cr>
-noremap <silent>\4 :tabn 4<cr>
-noremap <silent>\5 :tabn 5<cr>
-noremap <silent>\6 :tabn 6<cr>
-noremap <silent>\7 :tabn 7<cr>
-noremap <silent>\8 :tabn 8<cr>
-noremap <silent>\9 :tabn 9<cr>
-noremap <silent>\0 :tabn 10<cr>
+noremap <silent> <leader>tc :tabnew<cr>
+noremap <silent> <leader>tq :tabclose<cr>
+noremap <silent> <leader>tn :tabnext<cr>
+noremap <silent> <leader>tp :tabprev<cr>
+noremap <silent> <leader>to :tabonly<cr>
+
+" HL keys to move current tab to left/right
+noremap <silent> <leader>th :-tabmove<cr>
+noremap <silent> <leader>tl :+tabmove<cr>
+" shift+tab
 noremap <silent><s-tab> :tabnext<CR>
 inoremap <silent><s-tab> <ESC>:tabnext<CR>
+
+noremap <silent> <leader>ta g<tab>
+
+noremap <silent> <leader>t1 :tabn 1<cr>
+noremap <silent> <leader>t2 :tabn 2<cr>
+noremap <silent> <leader>t3 :tabn 3<cr>
+noremap <silent> <leader>t4 :tabn 4<cr>
+noremap <silent> <leader>t5 :tabn 5<cr>
+noremap <silent> <leader>t6 :tabn 6<cr>
+noremap <silent> <leader>t7 :tabn 7<cr>
+noremap <silent> <leader>t8 :tabn 8<cr>
+noremap <silent> <leader>t9 :tabn 9<cr>
+noremap <silent> <leader>t0 :tabn 10<cr>
 
 "----------------------------------------------------------------------
 " miscs
@@ -122,28 +163,6 @@ set scrolloff=2
 set showmatch
 set matchtime=3
 set listchars=tab:\|\ ,trail:.,extends:>,precedes:<
-
-" window management
-noremap <tab>h <c-w>h
-noremap <tab>j <c-w>j
-noremap <tab>k <c-w>k
-noremap <tab>l <c-w>l
-noremap <tab>w <c-w>w
-noremap <tab>c <c-w>c
-noremap <tab>+ <c-w>+
-noremap <tab>- <c-w>-
-noremap <tab>, <c-w>< 
-noremap <tab>. <c-w>>
-noremap <tab>= <c-w>=
-noremap <tab>s <c-w>s
-noremap <tab>v <c-w>v
-noremap <tab>o <c-w>o
-noremap <tab>p <c-w>p
-
-" tab enhancement
-noremap <silent><tab> <nop>
-noremap <silent><tab>f <c-i>
-noremap <silent><tab>b <c-o>
 
 " insert mode as emacs
 inoremap <c-a> <home>

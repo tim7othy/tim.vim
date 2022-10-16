@@ -3,6 +3,9 @@ command! -nargs=1 IncScript exec 'so '. fnameescape(s:home."/<args>")
 exec 'set rtp+='. fnameescape(s:home)
 exec 'set rtp+=~/.vim'
 
+let mapleader=','
+let g:mapleader=','
+
 IncScript init/viminit.vim
 IncScript init/ignores.vim
 IncScript init/tools.vim
@@ -10,7 +13,6 @@ IncScript init/keymaps.vim
 IncScript init/plugins.vim
 IncScript init/status.vim
 IncScript init/unix.vim
-
 
 " User Settings
 IncScript custom.vim
